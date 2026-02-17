@@ -4,6 +4,7 @@ import React from 'react'
 import { FEATURES } from '@/lib/constants'
 import { ArrowRight } from 'lucide-react'
 import { LordIcon, LORDICONS } from '@/components/ui/lord-icon'
+import { MagicBento } from '@/components/ui/magic-bento'
 
 export function FeaturesBento() {
   return (
@@ -41,19 +42,13 @@ function FeatureCard({ feature, index }: { feature: typeof FEATURES[0], index: n
   const iconSrc = iconMap[feature.icon as keyof typeof iconMap] || LORDICONS.target
 
   return (
-    <div
-      className="
-        group relative p-8 rounded-2xl border border-border bg-card
-        hover:shadow-xl hover:border-primary/50
-        transition-all duration-300
-      "
-    >
+    <MagicBento className="group relative p-8">
       {/* Icon */}
       <div className="mb-4">
         <LordIcon
           src={iconSrc}
           trigger="hover"
-          colors="primary:#A52502"
+          colors="primary:#000000"
           size={64}
         />
       </div>
@@ -80,6 +75,6 @@ function FeatureCard({ feature, index }: { feature: typeof FEATURES[0], index: n
         Learn more
         <ArrowRight className="w-4 h-4" />
       </a>
-    </div>
+    </MagicBento>
   )
 }

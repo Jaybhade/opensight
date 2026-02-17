@@ -23,7 +23,6 @@ export default function Home() {
         <FeaturesBento />
         <Understanding />
         <PromptIntelligence />
-        <CTAStrip />
         <UseCases />
         <FAQ />
       </main>

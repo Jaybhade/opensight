@@ -45,7 +45,7 @@ export function UseCases() {
                     <LordIcon
                       src={iconMap[index] || LORDICONS.sparkles}
                       trigger="hover"
-                      colors="primary:#A52502"
+                      colors="primary:#000000"
                       size={40}
                     />
                   </div>

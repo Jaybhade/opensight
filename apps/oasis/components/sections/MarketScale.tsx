@@ -19,15 +19,15 @@ export function MarketScale() {
           </p>
         </div>
 
-        {/* Engine DAU Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mb-12">
+        {/* Engine MAU Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6 max-w-6xl mx-auto mb-12">
           {MARKET_SCALE.engines.map((engine, index) => (
             <div
               key={index}
               className="p-6 rounded-xl border border-border bg-card hover:shadow-lg hover:border-primary/50 transition-all text-center"
             >
               <div className="text-4xl font-bold text-primary mb-2">
-                <AnimatedNumber value={engine.dau} />
+                <AnimatedNumber value={engine.mau} />
               </div>
               <p className="text-lg font-semibold text-foreground mb-1">
                 {engine.name}

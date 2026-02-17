@@ -38,7 +38,7 @@ export function Understanding() {
                   <LordIcon
                     src={iconMap[index] || LORDICONS.visibility}
                     trigger="hover"
-                    colors="primary:#A52502"
+                    colors="primary:#000000"
                     size={48}
                   />
                 </div>

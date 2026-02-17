@@ -8,8 +8,8 @@
     --background: 0 0% 100%;
     --foreground: 0 0% 5%;
 
-    /* Primary brand color #A52502 */
-    --primary: 13 98% 33%;
+    /* Primary brand color: Black */
+    --primary: 0 0% 0%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 0 0% 96%;
@@ -26,7 +26,7 @@
 
     --border: 0 0% 90%;
     --input: 0 0% 90%;
-    --ring: 13 98% 33%;
+    --ring: 0 0% 0%;
 
     --radius: 0.5rem;
   }

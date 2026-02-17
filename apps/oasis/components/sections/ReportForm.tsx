@@ -32,7 +32,7 @@ export function ReportForm() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div className="grid lg:grid-cols-2 gap-12 lg:items-stretch">
             {/* Left: Checklist */}
             <div className="space-y-4">
               {REPORT_OFFER.checklist.map((item, index) => (
@@ -44,7 +44,7 @@ export function ReportForm() {
                     <LordIcon
                       src={LORDICONS.checkmark}
                       trigger="hover"
-                      colors="primary:#A52502"
+                      colors="primary:#000000"
                       size={24}
                     />
                   </div>
@@ -54,64 +54,57 @@ export function ReportForm() {
             </div>
 
             {/* Right: Form */}
-            <div className="relative">
+            <div className="relative h-full">
               {/* Animated border effect */}
               <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-orange-600 rounded-2xl blur opacity-20" />
 
-              <div className="relative p-8 rounded-2xl border-2 border-border bg-card">
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  {/* URL Field */}
-                  <div>
-                    <label htmlFor="report-url" className="block text-sm font-medium mb-2">
-                      Website URL *
-                    </label>
-                    <input
-                      type="text"
-                      id="report-url"
-                      value={url}
-                      onChange={(e) => setUrl(e.target.value)}
-                      placeholder="yourdomain.com"
-                      required
-                      className="
-                        w-full px-4 py-3 rounded-lg border border-input
-                        bg-background text-foreground
-                        focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2
-                        placeholder:text-muted-foreground
-                      "
-                    />
-                  </div>
+              <div className="relative h-full p-8 rounded-2xl border-2 border-border bg-card flex flex-col">
+                <form onSubmit={handleSubmit} className="h-full flex flex-col">
+                  <div className="flex-1 space-y-4">
+                    {/* URL Field */}
+                    <div>
+                      <label htmlFor="report-url" className="block text-sm font-medium mb-2">
+                        Website URL *
+                      </label>
+                      <input
+                        type="text"
+                        id="report-url"
+                        value={url}
+                        onChange={(e) => setUrl(e.target.value)}
+                        placeholder="yourdomain.com"
+                        required
+                        className="
+                          w-full px-4 py-3 rounded-lg border border-input
+                          bg-background text-foreground
+                          focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2
+                          placeholder:text-muted-foreground
+                        "
+                      />
+                    </div>
 
-                  {/* Email Field */}
-                  <div>
-                    <label htmlFor="report-email" className="block text-sm font-medium mb-2">
-                      Email (optional)
-                    </label>
-                    <input
-                      type="email"
-                      id="report-email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="you@company.com"
-                      className="
-                        w-full px-4 py-3 rounded-lg border border-input
-                        bg-background text-foreground
-                        focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2
-                        placeholder:text-muted-foreground
-                      "
-                    />
+                    {/* Email Field */}
+                    <div>
+                      <label htmlFor="report-email" className="block text-sm font-medium mb-2">
+                        Email (optional)
+                      </label>
+                      <input
+                        type="email"
+                        id="report-email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="you@company.com"
+                        className="
+                          w-full px-4 py-3 rounded-lg border border-input
+                          bg-background text-foreground
+                          focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2
+                          placeholder:text-muted-foreground
+                        "
+                      />
+                    </div>
                   </div>
-
-                  {/* Submit Button */}
-                  <ShimmerButton
-                    type="submit"
-                    disabled={loading}
-                    className="w-full"
-                  >
-                    {loading ? 'Analyzing...' : REPORT_OFFER.cta}
-                  </ShimmerButton>
 
                   {/* Microcopy */}
-                  <div className="space-y-2 pt-4 border-t border-border">
+                  <div className="space-y-2 pt-4 mt-4 border-t border-border">
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <Lock className="w-4 h-4" />
                       <span>{REPORT_OFFER.privacy}</span>
@@ -120,6 +113,17 @@ export function ReportForm() {
                       <Zap className="w-4 h-4" />
                       <span>{REPORT_OFFER.speed}</span>
                     </div>
+                  </div>
+
+                  {/* Submit Button */}
+                  <div className="pt-4">
+                    <ShimmerButton
+                      type="submit"
+                      disabled={loading}
+                      className="w-full"
+                    >
+                      {loading ? 'Analyzing...' : REPORT_OFFER.cta}
+                    </ShimmerButton>
                   </div>
                 </form>
               </div>

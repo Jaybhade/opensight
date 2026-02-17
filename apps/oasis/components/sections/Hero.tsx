@@ -6,6 +6,8 @@ import { EngineLogos } from '@/components/brand/EngineLogos'
 import { HERO } from '@/lib/constants'
 import { ArrowRight } from 'lucide-react'
 import { LordIcon, LORDICONS } from '@/components/ui/lord-icon'
+import { RotatingText } from '@/components/ui/rotating-text'
+import { BorderBeam } from '@/components/ui/border-beam'
 
 export function Hero() {
   const [url, setUrl] = useState('')
@@ -18,8 +20,6 @@ export function Hero() {
 
   return (
     <section className="relative pt-32 md:pt-40 pb-20 md:pb-32 overflow-hidden">
-      {/* Subtle background effect - light theme only */}
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-50 to-white -z-10" />
 
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -32,7 +32,14 @@ export function Hero() {
 
             {/* Subheadline */}
             <p className="text-lg md:text-xl text-muted-foreground text-balance">
-              {HERO.subheadline}
+              Track visibility across{' '}
+              <span className="font-semibold text-primary">
+                <RotatingText
+                  words={['ChatGPT', 'Claude', 'Perplexity', 'Gemini', 'DeepSeek', 'Meta AI']}
+                  interval={2500}
+                />
+              </span>
+              , and more. Discover citation gaps. Build content that earns mentions.
             </p>
 
             {/* Benefits */}
@@ -43,7 +50,7 @@ export function Hero() {
                     <LordIcon
                       src={LORDICONS.checkmark}
                       trigger="loop-on-hover"
-                      colors="primary:#A52502"
+                      colors="primary:#000000"
                       size={24}
                     />
                   </div>
@@ -54,7 +61,7 @@ export function Hero() {
 
             {/* Form */}
             <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="flex flex-col sm:flex-row gap-3">
+              <div className="flex flex-col sm:flex-row gap-3 sm:items-stretch">
                 <div className="flex-1">
                   <label htmlFor="url" className="sr-only">
                     {HERO.urlLabel}
@@ -66,16 +73,16 @@ export function Hero() {
                     onChange={(e) => setUrl(e.target.value)}
                     placeholder={HERO.urlPlaceholder}
                     className="
-                      w-full px-4 py-4 rounded-lg border border-input
+                      w-full h-full px-4 py-4 rounded-lg border border-input
                       bg-background text-foreground
                       focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2
                       placeholder:text-muted-foreground
                     "
                   />
                 </div>
-                <ShimmerButton type="submit" className="sm:w-auto">
+                <ShimmerButton type="submit" className="sm:w-auto whitespace-nowrap">
                   {HERO.cta}
-                  <ArrowRight className="w-5 h-5 ml-2" />
+                  <ArrowRight className="w-5 h-5" />
                 </ShimmerButton>
               </div>
 
@@ -133,19 +140,19 @@ function HeroDashboard() {
         <rect x="300" y="60" width="60" height="8" rx="4" fill="#f3f4f6" />
 
         {/* Visibility Score Circle */}
-        <circle cx="200" cy="160" r="50" fill="#fef2f2" />
-        <circle cx="200" cy="160" r="45" stroke="#A52502" strokeWidth="8" strokeLinecap="round" strokeDasharray="220 283" transform="rotate(-90 200 160)" />
-        <text x="200" y="170" textAnchor="middle" className="text-2xl font-bold" fill="#A52502">87</text>
+        <circle cx="200" cy="160" r="50" fill="#f3f4f6" />
+        <circle cx="200" cy="160" r="45" stroke="#000000" strokeWidth="8" strokeLinecap="round" strokeDasharray="220 283" transform="rotate(-90 200 160)" />
+        <text x="200" y="170" textAnchor="middle" className="text-2xl font-bold" fill="#000000">87</text>
 
         {/* Stats Bars */}
         <rect x="60" y="240" width="280" height="20" rx="4" fill="#f3f4f6" />
-        <rect x="60" y="240" width="200" height="20" rx="4" fill="#A52502" opacity="0.8" />
+        <rect x="60" y="240" width="200" height="20" rx="4" fill="#000000" opacity="0.8" />
 
         <rect x="60" y="280" width="280" height="20" rx="4" fill="#f3f4f6" />
-        <rect x="60" y="280" width="160" height="20" rx="4" fill="#A52502" opacity="0.6" />
+        <rect x="60" y="280" width="160" height="20" rx="4" fill="#000000" opacity="0.6" />
 
         <rect x="60" y="320" width="280" height="20" rx="4" fill="#f3f4f6" />
-        <rect x="60" y="320" width="240" height="20" rx="4" fill="#A52502" opacity="0.4" />
+        <rect x="60" y="320" width="240" height="20" rx="4" fill="#000000" opacity="0.4" />
       </svg>
     </div>
   )

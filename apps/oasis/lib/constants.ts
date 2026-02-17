@@ -48,13 +48,14 @@ export const PROOF_POINTS = [
 
 export const MARKET_SCALE = {
   title: 'Answer engines shape brand discovery',
-  subtitle: 'Millions use AI to discover and evaluate brands. Your visibility matters.',
-  disclaimer: 'Industry-reported estimates where available. Some platforms don\'t publish official DAU.',
+  subtitle: 'Billions use AI to discover and evaluate brands. Your visibility matters.',
+  disclaimer: 'Industry-reported estimates where available. Some platforms don\'t publish official MAU.',
   engines: [
-    { name: 'ChatGPT', dau: '200M+', source: 'OpenAI (Nov 2023)' },
-    { name: 'Claude', dau: '10M+', source: 'Anthropic estimates' },
-    { name: 'Perplexity', dau: '10M+', source: 'Company reports (2024)' },
-    { name: 'Google Gemini', dau: 'Integrated', source: 'Part of Google Search' },
+    { name: 'ChatGPT', mau: '3.5B', source: 'OpenAI' },
+    { name: 'Meta AI', mau: '1B+', source: 'Meta' },
+    { name: 'Gemini', mau: '650M', source: 'Google' },
+    { name: 'Perplexity', mau: '45M', source: 'Company reports' },
+    { name: 'Claude', mau: '30M', source: 'Anthropic' },
   ],
   additionalStats: [
     { label: 'Zero-click answers', value: '58%', growth: '+12%', description: 'of queries answered without clicking' },

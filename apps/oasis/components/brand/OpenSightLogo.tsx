@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import { useReducedMotion } from '@/hooks/useReducedMotion'
 
 interface OpenSightLogoProps {
   variant?: 'default' | 'compact'
@@ -26,6 +27,8 @@ export function OpenSightLogo({ variant = 'default', className = '' }: OpenSight
 }
 
 function EyeIcon({ className }: { className?: string }) {
+  const reducedMotion = useReducedMotion()
+
   return (
     <svg
       viewBox="0 0 24 24"
@@ -59,6 +62,34 @@ function EyeIcon({ className }: { className?: string }) {
         fill="currentColor"
         className="text-primary"
       />
+
+      {/* Blinking eyelid effect */}
+      {!reducedMotion && (
+        <>
+          <path
+            d="M12 5C7 5 2.73 8.11 1 12.5 2.73 16.89 7 20 12 20s9.27-3.11 11-7.5C21.27 8.11 17 5 12 5z"
+            fill="white"
+            className="eye-blink"
+            style={{
+              animation: 'eye-blink 4s ease-in-out infinite',
+              transformOrigin: 'center',
+            }}
+          />
+        </>
+      )}
+
+      <style jsx>{`
+        @keyframes eye-blink {
+          0%, 45%, 55%, 100% {
+            opacity: 0;
+            transform: scaleY(0);
+          }
+          48%, 52% {
+            opacity: 1;
+            transform: scaleY(1);
+          }
+        }
+      `}</style>
     </svg>
   )
 }
