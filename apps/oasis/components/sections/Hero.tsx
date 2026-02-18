@@ -103,20 +103,17 @@ export function Hero() {
                 </span>
               ))}
             </div>
-
-            {/* Supported Engines */}
-            <div className="pt-8">
-              <p className="text-sm font-medium text-muted-foreground mb-4">
-                Supported engines
-              </p>
-              <EngineLogos />
-            </div>
           </div>
 
           {/* Right: Illustration */}
           <div className="relative">
             <HeroDashboard />
           </div>
+        </div>
+
+        {/* Supported Engines - Below both columns */}
+        <div className="mt-16 text-center">
+          <EngineLogos />
         </div>
       </div>
     </section>
